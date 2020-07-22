@@ -1,29 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:width@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Roboto:wght@100&display=swap" rel="stylesheet');
 
 body{
-    font-family:'Quicksand', sans-serif;
+    font-family:'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 h2, h3, h4 {
-    color: #00a2c6;
+    color: #3cdd1b;
 }
 
 header{
     display: inline;
 }
 
-.jumbotron{
+.jumbotron {
     font-size: 20px;
     padding: 60px;
-    background-color: #00c8eb;
+    background-color: #37e20c;
     text-align: center;
     color: white;
 }
 
 nav{
-    background-color: #00a2c6;
+    background-color: #5108fc;
     padding: 5px;
     position: sticky;
     top: 0;
@@ -33,11 +33,12 @@ nav a{
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 nav a:hover{
     font-weight: bold;
+    color: 
 }
 
 nav li{
@@ -49,7 +50,7 @@ nav li{
 footer{
     padding: 20px;
     color: white;
-    background-color: #00a2c6;
+    background-color: #251f44;
     text-align: center;
     font-weight: bold;
 }
@@ -64,8 +65,15 @@ main{
     width: 75%;
 }
 
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
 .card {
-    box-shadow: 0 4px 8px 0 rgba(1049, 4, 1, 4, 2);
+    box-shadow: 0 4px 8px 0 rgba(1020, 1289, 1, 4);
     border-radius: 5px;
     padding: 20px;
     margin-top: 20px;
@@ -87,3 +95,4 @@ aside{
         padding: 0;
     }
 }
+
