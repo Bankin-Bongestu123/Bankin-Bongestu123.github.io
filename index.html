@@ -1,119 +1,76 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-        <meta charset="UTF-8">
-        <title>BreakOut Game</title>
-        <style>
-        * {
-            padding:10px; margin:10;
-        }
-
-        canvas{
-            background:#eee; display:block;
-            margin:0 auto;
-        }
-
-    </style>
-
+        <title>Biodata Diri</title>
+        <link rel="stylesheet" href="style/style.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     </head>
-
     <body>
-        <canvas id="myCanvas" width="480" height="320"></canvas>
+        <header>
+            <div class="jumbotron">
+                <h1>Bankin Bongestu</h1>
+                <p>Saya suka mempelajari tentang komputer dan tertarik di bidang tsb</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skill">Skill</a></li>
+                    <li><a href="#language">Language</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <script>
-            var canvas = document.getElementById("myCanvas");
-            var ctx = canvas.getContext("2d");
+        <main>
+            <div id="content">
+                <article class=card id="about">
+                    <h2>About</h2>
+                    <img src="assets/images/About.jpg" class="featured-image" alt="About">
+                    <p>
+                        NAMA :	BANKIN BONGESTU<br>
+                        NIS :	01139<br>
+                        KELAS :	XII-RPL<br>
+                        TEMPAT DAN TANGGAL LAHIR :	15 November 2003,Jakarta<br>
+                        ALAMAT :	Apartement City Park<br>
+                        AGAMA :	Kristen<br>
+                        HOBI:	Bermain Game<br>
+                        NO TELP :	+6281286495907<br>
+                        MOTO HIDUP :	Tidak ada kata gagal, selagi kita terus mencoba sampai sukses.<br>
+                    </p>
+                </article>
+                <article class=card id="education">
+                    <h2>Education</h2>
+                    <img src="assets/images/Education.jpg" class="featured-image" alt="Education">
+                    <p>
+                        Saya bersekolah di SMK Cinta Kasih Tzu Chi Jurusan RPL dan saya sekarang duduk di bangku kelas XII<br>
+                        Di sekolah cinta kasih tzu chi saya bisa dapat banyak belajar tentang komputer dan masih banyak lagi<br>
+                        Mulai dari diajarkan sikap dan tata krama serta peraturan yang ketat di sekolah tersebut<br>
+                    </p>
+                </article>
+                <article class=card id="skill">
+                    <h2>Skill</h2>
+                    <img src="assets/images/Skill.jpg" class="featured-image" alt="Skill">
+                    <p>
+                        Skill saya berada di jurusan RPL Ini saya sudah banyak belajar cara membuat website<br>
+                        Mulai Dari belajar Html,CSS,Php Laravel dan web design<br>
+                    </p>
+                </article>
+            </div>
+            <aside>
+            <article class="card" id="language">
+                <h2>Language</h2>
+                <img src="assets/images/Language.jpg" class="featured-image" alt="Language">
+                <p>
+                    Saya bisa berbahasa indonesia secara lengkap<br>
+                </p>
+            </article>
+            </aside>
+        </main>
 
-            var ballRadius = 10;
-            
-            var x = canvas.width/2;
-            var y = canvas.height/2;
-
-            var dx = 2;
-            var dy = -2;
-
-            var paddleHeight = 10;
-            var paddleWidth = 75;
-            var paddleX = (canvas.width-paddleWidth)/2;
-
-            var rightPressed = false;
-            var leftPressed = false;
-
-            document.addEventListener("keydown", keyDownHandler, false);
-            document.addEventListener("keyup", keyUpHandler, false);
-
-            function keyDownHandler(e) {
-                if(e.key == "Right" || e.key == "ArrowRight"){
-                    rightPressed = true;
-                }else if(e.key == "Left" || e.key == "ArrowLeft"){
-                    leftPressed = true;
-                }
-            }
-
-            function keyUpHandler(e) {
-                if(e.key == "Right" || e.key == "ArrowRight"){
-                    rightPressed = false;
-                }
-                else if(e.key == "Left" || e.key == "ArrowLeft"){
-                    leftPressed = false;
-                }
-            }
-
-            function drawPaddle() {
-                ctx.beginPath();
-                ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-                ctx.fillStyle = "green";
-                ctx.fill();
-                ctx.closePath();
-            }
-
-            function drawBall() {
-                ctx.beginPath();
-                ctx.arc(x, y,ballRadius,0,Math.PI*2);
-                ctx.fillStyle = "#0095DD";
-                ctx.fill();
-                ctx.closePath();
-            }
-
-
-
-            function draw() {
-                ctx.clearRect(0,0, canvas.width, canvas.height);
-                drawBall();
-                drawPaddle();
-
-                if(x + dx > canvas.width-ballRadius || x + dx < ballRadius){
-                    dx = -dx;
-                }
-
-                if(y + dy < ballRadius){
-                    dy = -dy;
-                }else if(y + dy > canvas.height-ballRadius){
-                    if(x > paddleX && x < paddleX + paddleWidth){
-                        dy = -dy;
-                    }
-                    else{
-                        alert("Game Over");
-                    document.location.reload();
-                    clearInterval(interval); //Need for end of the game 
-                    }   
-                }
-
-                if(rightPressed && paddleX < canvas.width-paddleWidth){
-                    paddleX += 7;
-                } 
-                else if(leftPressed && paddleX > 0 ){
-                    paddleX -= 7;
-                }
-
-                x += dx;    
-                y += dy;
-            }
-
-            var interval = setInterval(draw,10);
-
-        </script>
-
+        <footer>
+            <p>Produk Kreatif dan Kewirausahaan &copy; 2020, SMK Cinta Kasih Tzu Chi</p>
+        </footer>
     </body>
 </html>
